@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\educonnect\eureka-service"/>
+			<item value="D:\educonnect\courseservice"/>
 			<item value="D:\Sping Projects\EduConnect\gateway1"/>
 			<item value="D:\Sping Projects\EduConnect\gateway"/>
 			<item value="D:\Sping Projects\EduConnect\getway"/>
