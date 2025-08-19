@@ -1,0 +1,92 @@
+package com.tg.educonnect.appointmentservice.service;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tg.educonnect.appointmentservice.dto.CourseDTO;
+import com.tg.educonnect.appointmentservice.dto.UserDTO;
+import com.tg.educonnect.appointmentservice.entity.Appointment;
+import com.tg.educonnect.appointmentservice.enums.AppointmentStatus;
+import com.tg.educonnect.appointmentservice.exceptionhandler.AppointmentNotFoundException;
+import com.tg.educonnect.appointmentservice.exceptionhandler.CustomException;
+import com.tg.educonnect.appointmentservice.feignclient.CourseClient;
+import com.tg.educonnect.appointmentservice.feignclient.UserClient;
+import com.tg.educonnect.appointmentservice.repository.AppointmentRepository;
+
+@Service
+public class AppointmentService {
+
+	@Autowired
+	private AppointmentRepository appointmentRepository;
+
+	@Autowired
+	private UserClient userClient;
+
+	@Autowired
+	private CourseClient courseClient;
+
+	public List<Appointment> getAllAppointment() {
+		List<Appointment> appointmentList = appointmentRepository.findAll();
+		if (!appointmentList.isEmpty()) {
+			return appointmentList;
+		}
+		throw new AppointmentNotFoundException("appointments is not available");
+	}
+
+	public Appointment getAppointmentById(Long appointmentId) {
+		return appointmentRepository.findById(appointmentId)
+				.orElseThrow(() -> new AppointmentNotFoundException("Appointment Not found of id " + appointmentId));
+	}
+
+	public List<Appointment> getAllAppointmentByUserId(Long userId) {
+		List<Appointment> appointmentList = appointmentRepository.findAllByUserId(userId);
+		if (!appointmentList.isEmpty()) {
+			return appointmentList;
+		}
+		throw new AppointmentNotFoundException("appointment not found of user " + userId);
+	}
+
+	public Appointment createAppointment(Appointment  appointment) {
+		UserDTO userDTO= userClient.getUserById(appointment.getUserId());
+		CourseDTO courseDTO=courseClient.getCourseById(appointment.getCourseId());
+		if(userDTO!=null && courseDTO!=null) {
+		Appointment appoint=appointmentRepository.save(appointment);
+		if(appoint!=null) {
+			return appoint;
+		}
+		throw new CustomException("unable to take appointment");
+		}
+		throw new CustomException("user not found of id "+appointment.getUserId());
+		
+	}
+	
+	public List<Appointment> getAllAppointmentByDate(LocalDate appointmentDate){
+		List<Appointment> appointment=appointmentRepository.findByAppointmentDate(appointmentDate);
+		if(appointment!=null) {
+			return appointment;
+		}
+		throw new AppointmentNotFoundException("Appointment not found of date "+appointmentDate);
+	}
+	
+	public Appointment cancalAppointment(Long appointmentId) {
+		Appointment appointment=getAppointmentById(appointmentId);
+		AppointmentStatus status= appointment.getStatus();
+		if(status.equals(AppointmentStatus.CONFIRMED) || status.equals(AppointmentStatus.PENDING)) {
+			appointment.setStatus(AppointmentStatus.CANCELLED);
+			return appointmentRepository.save(appointment);
+		}
+		throw new CustomException("unable to cancel appointment now try later");
+	}
+	
+	public List<Appointment> getAppointmentByStatus(String statusref){
+		AppointmentStatus status = AppointmentStatus.valueOf(statusref.toUpperCase());
+		List<Appointment> appointment=appointmentRepository.findByAppointmentStatus(status);
+		if(appointment.isEmpty()) {
+			throw new AppointmentNotFoundException("appointment not found of status "+status);
+		}
+		return appointment;
+	}
+}

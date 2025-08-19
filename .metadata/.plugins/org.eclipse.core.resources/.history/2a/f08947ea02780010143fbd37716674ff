@@ -1,0 +1,12 @@
+package com.tg.educonnect.appointmentservice.feignclient;
+
+import com.tg.educonnect.appointmentservice.dto.CourseDTO;
+
+public class CourseServiceFallback implements CourseClient {
+
+	@Override
+	public CourseDTO getCourseById(Long courseId) {
+		return new CourseDTO(courseId,"unable to get data now try later", null, null, null);
+		
+	}
+}

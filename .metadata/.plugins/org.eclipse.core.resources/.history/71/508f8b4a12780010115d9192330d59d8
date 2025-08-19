@@ -1,0 +1,25 @@
+package com.tg.educonnect.appointmentservice.feignclient;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.tg.educonnect.appointmentservice.dto.CourseDTO;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+@FeignClient(name = "courseservice", fallback = CourseServiceFallback.class)
+public interface CourseClient {
+
+//	@GetMapping("course/{courseId}")
+//	public CourseDTO getCourseById(@PathVariable Long courseId);
+//	
+
+	@GetMapping("course/{courseId}")
+	@CircuitBreaker(name = "courseServiceCB", fallbackMethod = "getCourseByIdFallback")
+	CourseDTO getCourseById(@PathVariable Long courseId);
+
+	default CourseDTO getCourseByIdFallback(Long courseId, Throwable t) {
+		return new CourseDTO(courseId, "unable to get data now try later", null, null, null);
+	}
+}

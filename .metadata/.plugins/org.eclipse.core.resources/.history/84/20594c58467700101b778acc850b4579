@@ -1,0 +1,24 @@
+package com.tg.educonnect.appointmentservice.repository;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.tg.educonnect.appointmentservice.entity.Appointment;
+
+
+@Repository
+public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
+
+	List<Appointment> findAllByUserId(Long userId);
+	
+	@Query("SELECT a FROM Appointment a WHERE DATE(a.appointmentDate) = :appointmentdate")
+	List<Appointment> findByAppointmentDate(LocalDate appointmentdate);
+	
+	
+	@Query("SELECT a FROM Appointment a WHERE status = :status")
+	List<Appointment> findByAppointmentStatus(AppointmentStatus status);
+}
