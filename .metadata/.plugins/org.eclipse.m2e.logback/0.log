@@ -2730,3 +2730,34 @@ org.eclipse.core.runtime.CoreException: Launch configuration SpringApplication r
 2025-08-19 14:10:06,668 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-08-19 14:10:06,676 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\sai\git\educonnect\userservice\src\test\resources
 2025-08-21 14:32:46,867 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2025-08-21 14:33:04,171 [Worker-11: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect.appointmentservice:appointmentservice:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\appointmentservice\pom.xml.
+2025-08-21 14:33:06,719 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:33:06,780 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:33:06,789 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\appointmentservice\src\test\resources
+2025-08-21 14:33:10,236 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect.appointmentservice:appointmentservice:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\appointmentservice\pom.xml.
+2025-08-21 14:33:12,156 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:33:12,185 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:33:12,191 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\appointmentservice\src\test\resources
+2025-08-21 14:34:15,625 [Worker-9: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect.courseservice:courseservice:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\courseservice\pom.xml.
+2025-08-21 14:34:15,714 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:34:15,728 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:15,735 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\courseservice\src\test\resources
+2025-08-21 14:34:17,077 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:34:17,082 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:17,084 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\courseservice\src\test\resources
+2025-08-21 14:34:18,593 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect.eurekaservice:eureka-service:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\eureka-service\pom.xml.
+2025-08-21 14:34:19,601 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\eureka-service\src\test\resources
+2025-08-21 14:34:19,883 [Worker-12: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect.eurekaservice:eureka-service:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\eureka-service\pom.xml.
+2025-08-21 14:34:22,458 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:34:22,477 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:22,480 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\eureka-service\src\test\resources
+2025-08-21 14:34:28,869 [Worker-16: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect:gateway:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\gateway\pom.xml.
+2025-08-21 14:34:29,656 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:29,657 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:29,661 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\gateway\src\test\resources
+2025-08-21 14:34:31,651 [Worker-8: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect:gateway:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\gateway\pom.xml.
+2025-08-21 14:34:32,099 [Worker-11: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect:gateway:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\gateway\pom.xml.
+2025-08-21 14:34:32,951 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-08-21 14:34:32,985 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-08-21 14:34:32,991 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Sping Projects\EduConnect\gateway\src\test\resources
+2025-08-21 14:34:34,280 [Worker-20: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.tg.educonnect:gateway:0.0.1-SNAPSHOT @ D:\Sping Projects\EduConnect\gateway\pom.xml.
